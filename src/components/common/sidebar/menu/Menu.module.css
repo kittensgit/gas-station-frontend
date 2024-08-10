@@ -1,0 +1,44 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    font-weight: 500;
+    transition: all 0.3s ease-in;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.link img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+
+.link:hover {
+    background-color: #4d6280;
+    font-weight: 600;
+    border-radius: 25px;
+}
+
+.active {
+    background-color: #4d6280;
+    font-weight: 600;
+    border-radius: 25px;
+}
+
+@media (max-width: 450px) {
+    .list {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .link p {
+        display: none;
+    }
+}

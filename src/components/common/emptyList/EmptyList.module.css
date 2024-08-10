@@ -1,0 +1,25 @@
+.empty {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.empty_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.empty_content img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.empty_content h3 {
+    font-weight: 700;
+    color: #6582aa;
+    font-size: 20px;
+}

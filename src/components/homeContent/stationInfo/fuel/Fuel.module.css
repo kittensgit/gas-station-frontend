@@ -1,0 +1,48 @@
+.fuel {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+}
+
+.fuel_info {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.fuel_image {
+    padding: 8px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+}
+
+.fuel_image img {
+    width: 34px;
+    height: 34px;
+    object-fit: cover;
+}
+
+.fuel_about {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.fuel_about h4,
+.fuel_about p {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.fuel_about p {
+    background-color: #2c4260;
+    padding: 4px 15px;
+    align-self: flex-start;
+    border-radius: 25px;
+}
+
+.fuel_price {
+    font-weight: 700;
+    color: #6db3f3;
+}

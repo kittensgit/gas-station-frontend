@@ -1,0 +1,135 @@
+.add_fuel {
+    min-width: 180px;
+    min-height: 180px;
+    border-radius: 30px;
+    padding: 10px 15px;
+    background-color: #253550;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plus {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.plus img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+}
+
+.edit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.fuel_icon {
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.fuel_icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.edit_info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.info_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.info_item p {
+    font-weight: 600;
+}
+
+.info_item input {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    text-align: center;
+    transition: all 0.3s ease-in;
+}
+
+.info_item input::placeholder {
+    color: #6582aa;
+}
+
+.lg_input,
+.sm_input {
+    padding-bottom: 5px;
+    border-bottom: 2px solid #6582aa !important;
+}
+
+.lg_input:hover,
+.sm_input:hover {
+    border-bottom: 2px solid #8fabd2 !important;
+}
+
+.lg_input {
+    max-width: 120px;
+}
+
+.sm_input,
+.color_input {
+    max-width: 45px;
+}
+
+.color_input {
+    cursor: pointer;
+}
+
+.color_input::-webkit-color-swatch {
+    border-radius: 15px;
+    border: none;
+}
+
+.add {
+    font-family: 'Work Sans', sans-serif;
+    padding: 8px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: #415a7b;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+.add:hover {
+    transform: scale(1.05);
+    background-color: #3d5270;
+}
+
+@media (max-width: 450px) {
+    .add_fuel {
+        min-height: 140px;
+        width: 100%;
+    }
+    .edit {
+        width: 100%;
+    }
+    .edit_info {
+        display: flex;
+        flex-direction: column;
+        align-self: normal;
+    }
+}

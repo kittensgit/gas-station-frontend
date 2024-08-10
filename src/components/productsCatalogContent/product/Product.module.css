@@ -1,0 +1,99 @@
+.product {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color: #1e2b40;
+    border-radius: 25px;
+    width: 250px;
+    position: relative;
+}
+
+.productIcon {
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.productIcon img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.product_info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.product_info h3 {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.cost {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    background-color: #486389;
+    border-radius: 25px;
+    padding: 3px 3px 3px 6px;
+}
+
+.cost p {
+    font-weight: 800;
+}
+
+.cost img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+
+.drink {
+    background-color: #2c4260;
+}
+
+.dessert {
+    background-color: #f1a4dc;
+}
+
+.main {
+    background-color: #ffd770;
+}
+
+.remove {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+.remove:hover {
+    transform: scale(1.1);
+}
+
+.remove img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
+
+@media (max-width: 450px) {
+    .product {
+        width: 100%;
+    }
+    .remove {
+        right: 2%;
+        top: 7%;
+    }
+    .remove img {
+        width: 25px;
+        height: 25px;
+    }
+}

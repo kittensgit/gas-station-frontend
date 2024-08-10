@@ -1,0 +1,146 @@
+.order {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.parcel_icon {
+    align-self: flex-end;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cart_icon {
+    padding-left: 20px;
+}
+
+.cart_icon img,
+.parcel_icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.tooltip {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #486389;
+    padding: 2px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #92b9ec;
+    position: relative;
+    transition: all 0.3s ease-in;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 99%;
+    margin-top: -6px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent #486389;
+}
+
+.tooltip img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+
+.tooltip:hover {
+    color: #fff;
+    transform: translateX(-5px);
+}
+
+.order_content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    padding: 20px;
+    border-radius: 30px;
+    border: 3px dashed #486389;
+}
+
+.order_content h4 {
+    justify-self: center;
+    font-weight: 600;
+}
+
+.order_content p {
+    justify-self: center;
+    color: #6582aa;
+    font-weight: 600;
+}
+
+.price {
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+
+.price img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+
+.status {
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.green_circle,
+.yellow_circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.yellow_circle {
+    background-color: #ffd12d;
+}
+.green_circle {
+    background-color: #65ff4d;
+}
+
+.status p {
+    color: #fff;
+}
+
+@media (max-width: 450px) {
+    .order_content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .cart_icon img,
+    .parcel_icon img {
+        width: 35px;
+        height: 35px;
+    }
+    .tooltip {
+        font-size: 12px;
+        padding: 2px 5px;
+    }
+    .tooltip img {
+        width: 18px;
+        height: 18px;
+    }
+    .tooltip::after {
+        border-width: 5px;
+        margin-top: -5px;
+    }
+}

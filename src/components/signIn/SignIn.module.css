@@ -1,0 +1,146 @@
+.wrapper {
+    background-color: #1e2b40;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border-radius: 30px;
+    height: 100%;
+    width: 100%;
+}
+
+.introducing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #253550;
+    border-radius: 30px 0 0 30px;
+    padding: 30px;
+    gap: 15px;
+}
+
+.introducing h1 {
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+}
+
+.introducing p {
+    text-align: center;
+    color: #6582aa;
+    font-size: 15px;
+    line-height: 120%;
+}
+
+.btn {
+    background-color: transparent;
+    border-radius: 30px;
+    padding: 10px 50px;
+    font-weight: 700;
+    font-family: 'Work Sans', sans-serif;
+    color: #6582aa;
+    border: 1px solid #6582aa;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.4s ease-in;
+}
+
+.btn:hover {
+    background-color: #6582aa;
+    color: #1e2b40;
+}
+
+.btnFilled {
+    background-color: #6582aa;
+    color: #1e2b40;
+}
+
+.btnFilled:hover {
+    color: #6582aa;
+    background-color: transparent;
+}
+
+.signin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    gap: 20px;
+}
+
+.signin h2 {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.input img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+
+.input input {
+    min-width: 260px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #6582aa;
+    color: #fff;
+    outline: none;
+    padding: 5px 0;
+    font-size: 18px;
+    font-family: 'Work Sans', sans-serif;
+    transition: all 0.3s ease-in;
+}
+
+.input input::placeholder {
+    color: #6582aa;
+}
+
+.input input:hover {
+    border-bottom: 2px solid #fff;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #fff;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+    background: -webkit-linear-gradient(
+        top,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(0, 174, 255, 0.04) 50%,
+        rgba(255, 255, 255, 0) 51%,
+        rgba(0, 174, 255, 0.03) 100%
+    );
+}
+
+@media (max-width: 450px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    .introducing {
+        border-radius: 30px 30px 0 0;
+    }
+    .signin {
+        padding: 20px;
+    }
+}

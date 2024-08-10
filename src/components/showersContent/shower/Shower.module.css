@@ -1,0 +1,112 @@
+.shower {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #253550;
+    border-radius: 30px;
+    border: 4px solid #415a7b;
+    position: relative;
+}
+
+.shower_img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.shower_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.shower_info h4 {
+    font-weight: 600;
+    text-align: center;
+}
+
+.shower_info h4 span {
+    font-weight: 700;
+}
+
+.status {
+    color: #6582aa;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.status span {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.occupied {
+    color: #ff4d4d;
+}
+
+.free {
+    color: #65ff4d;
+}
+
+.booking {
+    background-color: transparent;
+    border: none;
+    display: inline-flex;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+.booking img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+
+.booking:hover {
+    transform: scale(1.2);
+}
+
+.time {
+    background-color: #ff4d4d;
+    font-weight: 600;
+    padding: 2px 5px;
+    border-radius: 10px;
+    position: absolute;
+    top: 5%;
+    right: 6%;
+}
+
+@media (max-width: 450px) {
+    .shower {
+        padding: 15px;
+        width: 150px;
+    }
+    .shower_img {
+        width: 60px;
+        height: 60px;
+    }
+    .shower_info h4 {
+        font-size: 14px;
+    }
+    .status {
+        font-size: 14px;
+    }
+    .status span {
+        gap: 5px;
+    }
+    .booking img {
+        width: 15px;
+        height: 15px;
+    }
+    .time {
+        font-size: 12px;
+    }
+}

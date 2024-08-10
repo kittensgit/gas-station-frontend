@@ -1,0 +1,59 @@
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.input input {
+    min-width: 180px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #6582aa;
+    color: #fff;
+    outline: none;
+    padding: 5px 0;
+    font-size: 15px;
+    font-family: 'Work Sans', sans-serif;
+    transition: all 0.3s ease-in;
+}
+
+.input input::placeholder {
+    color: #8198b7;
+}
+
+.input input:hover {
+    border-bottom: 2px solid #fff;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #fff;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+    background: -webkit-linear-gradient(
+        top,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(0, 174, 255, 0.04) 50%,
+        rgba(255, 255, 255, 0) 51%,
+        rgba(0, 174, 255, 0.03) 100%
+    );
+}

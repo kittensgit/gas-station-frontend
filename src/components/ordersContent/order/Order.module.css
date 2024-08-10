@@ -1,0 +1,101 @@
+.order {
+    display: flex;
+    flex-direction: column;
+    background-color: #1e2b40;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.order_top {
+    padding: 20px;
+    border-bottom: 3px solid #141f30;
+}
+
+.order_top p {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.order_list {
+    display: flex;
+    flex-direction: column;
+}
+
+.order_item:nth-child(even) {
+    background-color: #141f30;
+}
+
+.order_item {
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.order_item p {
+    justify-self: center;
+    font-weight: 600;
+}
+
+.quantity,
+.date {
+    color: #6582aa;
+}
+
+.price {
+    justify-self: center;
+    display: flex;
+    align-items: center;
+}
+.price img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+.price p {
+    font-weight: 800;
+}
+
+.status {
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-family: 'Work Sans', sans-serif;
+    cursor: pointer;
+}
+
+.status p {
+    transition: all 0.3s ease-in;
+}
+
+.status:hover p {
+    color: #6582aa;
+}
+
+.green_circle,
+.yellow_circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.yellow_circle {
+    background-color: #ffd12d;
+}
+.green_circle {
+    background-color: #65ff4d;
+}
+
+@media (max-width: 450px) {
+    .order_item {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}

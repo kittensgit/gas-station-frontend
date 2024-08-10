@@ -1,0 +1,40 @@
+.wrapper {
+    width: 100%;
+    background-color: #1e2b40;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.users_top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 0.6fr;
+    border-bottom: 3px solid #141f30;
+}
+
+.users_top li {
+    justify-self: center;
+    padding: 15px;
+    color: #445a79;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.users {
+    display: flex;
+    flex-direction: column;
+}
+
+.users li:nth-child(even) {
+    background-color: #141f30;
+}
+
+@media (max-width: 450px) {
+    .users_top {
+        display: none;
+    }
+    .users li:nth-child(even) p:first-child {
+        border-bottom: 2px solid #1e2b40;
+    }
+}

@@ -1,0 +1,108 @@
+.user {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr;
+    padding: 15px;
+    font-weight: 500;
+}
+
+.user p {
+    justify-self: center;
+}
+
+.email {
+    color: #6582aa;
+}
+
+.scores {
+    display: flex;
+    gap: 3px;
+    justify-content: center;
+}
+
+.scores span {
+    font-weight: 700;
+}
+
+.scores img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+
+.role {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    cursor: pointer;
+}
+
+.role:hover .triangle {
+    transform: translateX(3px) rotate(90deg);
+}
+
+.triangle {
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 4px 7px 4px;
+    border-color: transparent transparent #fff transparent;
+    transform: rotate(90deg);
+    transition: all 0.3s ease-in;
+}
+
+.triangle_admin {
+    border-color: transparent transparent #0b803a transparent;
+}
+
+.admin {
+    font-weight: 600;
+    color: #0b803a;
+    background-color: #c1f2b6;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+.remove {
+    justify-self: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    text-align: center;
+    vertical-align: middle;
+    transition: all 0.3s ease-in;
+}
+
+.remove:hover {
+    transform: scale(1.15);
+}
+
+.remove img {
+    width: 25px;
+    height: 25px;
+}
+
+@media (max-width: 450px) {
+    .user {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 15px 0;
+        position: relative;
+    }
+    .user p:first-child {
+        align-self: start;
+        border-bottom: 2px solid #141f30;
+        padding: 0px 15px 10px;
+        width: 100%;
+        font-weight: 700;
+        font-size: 18px;
+    }
+    .remove {
+        position: absolute;
+        top: 9px;
+        right: 8px;
+    }
+}
