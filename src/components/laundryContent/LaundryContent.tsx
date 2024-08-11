@@ -12,6 +12,7 @@ interface LaundryContentProps {
     userId: IUser['_id'];
     machines: IMachine[];
     machinePrice: IMachines['price'];
+    isAuth: boolean;
     onReleaseMachine: (machineId: IMachine['_id']) => void;
     onBookMachine: (machineId: IMachine['_id']) => void;
 }
@@ -20,6 +21,7 @@ const LaundryContent: FC<LaundryContentProps> = ({
     machines,
     machinePrice,
     userId,
+    isAuth,
     onBookMachine,
     onReleaseMachine,
 }) => {
@@ -41,6 +43,7 @@ const LaundryContent: FC<LaundryContentProps> = ({
                         key={index}
                         machine={item}
                         machineNum={index + 1}
+                        isAuth={isAuth}
                         userMachine={userMachine!}
                         onBookMachine={onBookMachine}
                         onReleaseMachine={onReleaseMachine}

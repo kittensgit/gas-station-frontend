@@ -11,6 +11,7 @@ interface ShowerProps {
     showerNum: number;
     shower: IShower;
     userShower: IShower;
+    isAuth: boolean;
     onBookShower: (showerId: IShower['_id']) => void;
     onReleaseShower: (showerId: IShower['_id']) => void;
 }
@@ -19,6 +20,7 @@ const Shower: FC<ShowerProps> = ({
     shower,
     showerNum,
     userShower,
+    isAuth,
     onBookShower,
     onReleaseShower,
 }) => {
@@ -71,7 +73,7 @@ const Shower: FC<ShowerProps> = ({
                         className={showerStatus ? styles.occupied : styles.free}
                     >
                         {showerStatus ? 'Occupied' : 'Free'}
-                        {!showerStatus && !userShower && (
+                        {isAuth && !showerStatus && !userShower && (
                             <button
                                 className={styles.booking}
                                 onClick={() => onBookShower(shower._id)}

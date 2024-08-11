@@ -11,6 +11,7 @@ interface MachineProps {
     machine: IMachine;
     machineNum: number;
     userMachine: IMachine;
+    isAuth: boolean;
     onReleaseMachine: (machineId: IMachine['_id']) => void;
     onBookMachine: (machineId: IMachine['_id']) => void;
 }
@@ -19,6 +20,7 @@ const Machine: FC<MachineProps> = ({
     machine,
     machineNum,
     userMachine,
+    isAuth,
     onBookMachine,
     onReleaseMachine,
 }) => {
@@ -77,7 +79,7 @@ const Machine: FC<MachineProps> = ({
                         }
                     >
                         {machineStatus ? 'Occupied' : 'Free'}
-                        {!machineStatus && !userMachine && (
+                        {isAuth && !machineStatus && !userMachine && (
                             <button
                                 className={styles.booking}
                                 onClick={() => onBookMachine(machine._id)}

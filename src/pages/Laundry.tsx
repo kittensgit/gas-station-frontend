@@ -18,7 +18,7 @@ import {
 
 const Laundry: FC = () => {
     const dispatch = useAppDispatch();
-    const { userId } = useAuth();
+    const { userId, isAuth } = useAuth();
 
     const { machines, machinePrice, status } = useAppSelector(
         (state) => state.machines
@@ -69,6 +69,7 @@ const Laundry: FC = () => {
             userId={userId}
             machines={machines}
             machinePrice={machinePrice}
+            isAuth={isAuth}
             onBookMachine={onBookMachine}
             onReleaseMachine={onReleaseMachine}
         />

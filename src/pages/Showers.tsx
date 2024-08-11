@@ -18,7 +18,7 @@ import {
 
 const Showers: FC = () => {
     const dispatch = useAppDispatch();
-    const { userId } = useAuth();
+    const { userId, isAuth } = useAuth();
 
     const [isBook, setIsBook] = useState<boolean>(false);
     const [isRelease, setIsRelease] = useState<boolean>(false);
@@ -66,6 +66,7 @@ const Showers: FC = () => {
             showers={showers}
             userId={userId}
             showerPrice={showerPrice}
+            isAuth={isAuth}
             onReleaseShower={onReleaseShower}
             onBookShower={onBookShower}
         />

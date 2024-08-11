@@ -13,6 +13,7 @@ interface ShowersContentProps {
     userId: IUser['_id'];
     showers: IShower[];
     showerPrice: number;
+    isAuth: boolean;
     onReleaseShower: (showerId: IShower['_id']) => void;
     onBookShower: (showerId: IShower['_id']) => void;
 }
@@ -21,6 +22,7 @@ const ShowersContent: FC<ShowersContentProps> = ({
     showers,
     userId,
     showerPrice,
+    isAuth,
     onReleaseShower,
     onBookShower,
 }) => {
@@ -43,6 +45,7 @@ const ShowersContent: FC<ShowersContentProps> = ({
                         key={item._id}
                         shower={item}
                         showerNum={index + 1}
+                        isAuth={isAuth}
                         onReleaseShower={onReleaseShower}
                         onBookShower={onBookShower}
                     />
