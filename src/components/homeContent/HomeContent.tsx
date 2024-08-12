@@ -1,6 +1,7 @@
-import { FC } from 'react';
+import { FC, useRef } from 'react';
 
 import Loading from 'components/common/loading/Loading';
+import Error from 'components/common/error/Error';
 
 import { IFuel, IOrderFuel, IRefuelData } from 'types/fuel';
 
@@ -38,10 +39,20 @@ const HomeContent: FC<HomeContentProps> = ({
     onAddFuel,
     onRemoveFuel,
 }) => {
+    const targetRef = useRef<HTMLDivElement>(null);
+
+    const handleScroll = () => {
+        if (targetRef.current) {
+            targetRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <div className={styles.wrapper}>
             {status === 'loading' ? (
                 <Loading />
+            ) : status === 'error' ? (
+                <Error />
             ) : (
                 <FuelList
                     isAuth={isAuth}
@@ -51,11 +62,13 @@ const HomeContent: FC<HomeContentProps> = ({
                     onAddOrderFuel={onAddOrderFuel}
                     onAddFuel={onAddFuel}
                     onRemoveFuel={onRemoveFuel}
+                    handleScroll={handleScroll}
                 />
             )}
 
             {!isAdmin && (
                 <StationInfo
+                    targetRef={targetRef}
                     orderFuel={orderFuel}
                     totalCost={totalCost}
                     onRefuel={onRefuel}

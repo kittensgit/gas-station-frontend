@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useEffect, useState } from 'react';
+import { ChangeEvent, FC, KeyboardEvent, useEffect, useState } from 'react';
 
 import { IShower, IShowers } from 'types/shower';
 
@@ -69,6 +69,12 @@ const ShowersCatalogContent: FC<ShowersCatalogContentProps> = ({
         }
     };
 
+    const handleEnter = (e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            handleAddShower();
+        }
+    };
+
     return (
         <div className={styles.showers_content}>
             <div className={styles.title}>
@@ -123,10 +129,11 @@ const ShowersCatalogContent: FC<ShowersCatalogContentProps> = ({
                                     onChange={onChangeQuantity}
                                     type="number"
                                     placeholder="0"
+                                    onKeyDown={handleEnter}
                                 />
                                 <button
-                                    onClick={handleAddShower}
                                     className={styles.add}
+                                    onClick={handleAddShower}
                                 >
                                     <img src={addIcon} alt="add" />
                                 </button>

@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useState } from 'react';
+import { ChangeEvent, FC, KeyboardEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import userIcon from 'assets/icons/user.png';
@@ -26,6 +26,7 @@ const SignUp: FC<SignUpProps> = ({ signUp }) => {
             [name]: value,
         }));
     };
+
     const onSignUp = () => {
         signUp(signUpData);
         setSignUpData({
@@ -34,6 +35,13 @@ const SignUp: FC<SignUpProps> = ({ signUp }) => {
             password: '',
         });
     };
+
+    const handleEnter = (e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            onSignUp();
+        }
+    };
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.introducing}>
@@ -74,6 +82,7 @@ const SignUp: FC<SignUpProps> = ({ signUp }) => {
                             type="password"
                             placeholder="Password"
                             onChange={onChangeSignUpData}
+                            onKeyDown={handleEnter}
                         />
                     </div>
                 </div>

@@ -35,21 +35,23 @@ const AddFuel: FC<AddFuelProps> = ({ onAddFuel }) => {
         };
 
     const handleAddFuel = () => {
-        onAddFuel({
-            color,
-            discount,
-            logo: iconName,
-            name,
-            price: pricePerLiter,
-            scores: pointsPerLiter,
-        });
-        toggleEdit();
-        setColor('');
-        setName('');
-        setIconName('');
-        setDiscount(0);
-        setPointsPerLiter(1);
-        setPricePerLiter(1);
+        if (name && iconName) {
+            onAddFuel({
+                color,
+                discount,
+                logo: iconName,
+                name,
+                price: pricePerLiter,
+                scores: pointsPerLiter,
+            });
+            toggleEdit();
+            setColor('');
+            setName('');
+            setIconName('');
+            setDiscount(0);
+            setPointsPerLiter(1);
+            setPricePerLiter(1);
+        }
     };
 
     return (

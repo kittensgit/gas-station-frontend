@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useState } from 'react';
+import { ChangeEvent, FC, KeyboardEvent, useState } from 'react';
 
 import { IProduct } from 'types/product';
 
@@ -52,6 +52,12 @@ const ProductsCatalogContent: FC<ProductsCatalogContentProps> = ({
         }
     };
 
+    const handleEnter = (e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            handleAddProduct();
+        }
+    };
+
     return (
         <ul className={styles.products}>
             <li className={styles.add_product}>
@@ -71,6 +77,7 @@ const ProductsCatalogContent: FC<ProductsCatalogContentProps> = ({
                                 type="number"
                                 placeholder="Price"
                                 onChange={onChangeScoresCount}
+                                onKeyDown={handleEnter}
                             />
                         </div>
                         <div className={styles.edit_info}>

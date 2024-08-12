@@ -16,6 +16,7 @@ interface FuelListProps {
     onAddOrderFuel: (orderFuel: IOrderFuel) => void;
     onAddFuel: (fuel: Omit<IFuel, '_id'>) => void;
     onRemoveFuel: (fuelId: IFuel['_id']) => void;
+    handleScroll: () => void;
 }
 
 const FuelList: FC<FuelListProps> = ({
@@ -26,6 +27,7 @@ const FuelList: FC<FuelListProps> = ({
     onAddOrderFuel,
     onAddFuel,
     onRemoveFuel,
+    handleScroll,
 }) => {
     const [literQuantity, setLiterQuantity] = useState(1);
     const [activeFuel, setActiveFuel] = useState<string | null>(null);
@@ -60,6 +62,7 @@ const FuelList: FC<FuelListProps> = ({
                     onAddOrderFuel={handleAddOrderFuel}
                     toggleEdit={toggleActiveFuelEdit}
                     onRemoveFuel={onRemoveFuel}
+                    handleScroll={handleScroll}
                 />
             ))}
         </ul>

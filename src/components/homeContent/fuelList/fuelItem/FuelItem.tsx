@@ -1,4 +1,4 @@
-import { ChangeEvent, FC } from 'react';
+import { ChangeEvent, FC, KeyboardEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { IFuel, IOrderFuel } from 'types/fuel';
@@ -20,6 +20,7 @@ interface FuelItemProps {
     onAddOrderFuel: (fuel: IOrderFuel) => void;
     toggleEdit: (name: string) => void;
     onRemoveFuel: (fuelId: IFuel['_id']) => void;
+    handleScroll: () => void;
 }
 
 const FuelItem: FC<FuelItemProps> = ({
@@ -33,6 +34,7 @@ const FuelItem: FC<FuelItemProps> = ({
     onAddOrderFuel,
     toggleEdit,
     onRemoveFuel,
+    handleScroll,
 }) => {
     const navigate = useNavigate();
     const { color, logo, name, price, discount, scores, _id } = fuel;
@@ -47,6 +49,9 @@ const FuelItem: FC<FuelItemProps> = ({
             scores,
         };
         onAddOrderFuel(newOrderFuel);
+        setTimeout(() => {
+            handleScroll();
+        }, 0);
     };
 
     const handleEdit = () => {
@@ -54,6 +59,12 @@ const FuelItem: FC<FuelItemProps> = ({
             toggleEdit(name);
         } else {
             navigate('/login');
+        }
+    };
+
+    const handleEnter = (e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            addOrderFuel();
         }
     };
 
@@ -86,6 +97,7 @@ const FuelItem: FC<FuelItemProps> = ({
                             placeholder="0"
                             name={name}
                             onChange={onChangeLiterQuantity}
+                            onKeyDown={handleEnter}
                         />
                         <button onClick={addOrderFuel}>
                             <img src={addIcon} alt="add" />

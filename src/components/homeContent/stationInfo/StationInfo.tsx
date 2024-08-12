@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useState } from 'react';
+import { ChangeEvent, FC, RefObject, useState } from 'react';
 
 import { IOrderFuel, IRefuelData } from 'types/fuel';
 
@@ -14,6 +14,7 @@ import styles from './StationInfo.module.css';
 interface StationInfoProps {
     orderFuel: IOrderFuel;
     totalCost: number;
+    targetRef: RefObject<HTMLDivElement>;
     onRefuel: (refuelData: IRefuelData) => void;
     onResetOrder: () => void;
 }
@@ -21,6 +22,7 @@ interface StationInfoProps {
 const StationInfo: FC<StationInfoProps> = ({
     orderFuel,
     totalCost,
+    targetRef,
     onRefuel,
     onResetOrder,
 }) => {
@@ -69,7 +71,7 @@ const StationInfo: FC<StationInfoProps> = ({
     };
 
     return (
-        <div className={styles.info}>
+        <div className={styles.info} ref={targetRef}>
             <div className={styles.about}>
                 <div className={styles.title}>
                     <h2>Gas station</h2>

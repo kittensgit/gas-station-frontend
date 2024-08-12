@@ -186,3 +186,12 @@ input::-webkit-inner-spin-button {
         transform: translate(10%);
     }
 }
+@media (max-width: 450px) {
+    .price {
+        gap: 4px;
+    }
+    .edit img {
+        width: 20px;
+        height: 20px;
+    }
+}

@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useState } from 'react';
+import { ChangeEvent, FC, KeyboardEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import emailIcon from 'assets/icons/email.png';
@@ -34,6 +34,12 @@ const SignIn: FC<SignInProps> = ({ signIn }) => {
         });
     };
 
+    const handleEnter = (e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            onSignIn();
+        }
+    };
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.introducing}>
@@ -66,6 +72,7 @@ const SignIn: FC<SignInProps> = ({ signIn }) => {
                             type="password"
                             placeholder="Password"
                             onChange={handleChangeSignInData}
+                            onKeyDown={handleEnter}
                         />
                     </div>
                 </div>

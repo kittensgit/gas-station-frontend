@@ -1,4 +1,4 @@
-import { ChangeEvent, FC } from 'react';
+import { ChangeEvent, FC, KeyboardEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { IOrderProduct, IProduct } from 'types/product';
@@ -40,12 +40,18 @@ const Product: FC<ProductProps> = ({
         }
     };
 
-    const addOrderFuel = () => {
+    const addOrderProduct = () => {
         handleAddOrderProduct({
             productId: product._id,
             quantity: productQuantity,
             scoresCount: product.scoresCount * productQuantity,
         });
+    };
+
+    const handleEnter = (e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            addOrderProduct();
+        }
     };
 
     return (
@@ -87,8 +93,9 @@ const Product: FC<ProductProps> = ({
                             placeholder="0"
                             name={product.name}
                             onChange={onChangeProductQuantity}
+                            onKeyDown={handleEnter}
                         />
-                        <button onClick={addOrderFuel}>
+                        <button onClick={addOrderProduct}>
                             <img src={addIcon} alt="add" />
                         </button>
                     </div>

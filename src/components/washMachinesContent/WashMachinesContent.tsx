@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useEffect, useState } from 'react';
+import { ChangeEvent, FC, KeyboardEvent, useEffect, useState } from 'react';
 
 import { IMachine, IMachines } from 'types/machine';
 
@@ -63,6 +63,13 @@ const WashMachinesContent: FC<WashMachinesCatalogProps> = ({
             toggleEditPrice();
         }
     };
+
+    const handleEnter = (e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            handleAddMachine();
+        }
+    };
+
     return (
         <div className={styles.machines_content}>
             <div className={styles.title}>
@@ -117,6 +124,7 @@ const WashMachinesContent: FC<WashMachinesCatalogProps> = ({
                                     onChange={onChangeQuantity}
                                     type="number"
                                     placeholder="0"
+                                    onKeyDown={handleEnter}
                                 />
                                 <button
                                     onClick={handleAddMachine}
